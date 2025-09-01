@@ -6,9 +6,12 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 const Footer = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/davis-mo-143565306/",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:dal534413@utdallas.edu", label: "Email" },
   ];
 
   return (
@@ -23,10 +26,11 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-blue-400">Portfolio</h3>
+            <h3 className="text-2xl font-bold text-blue-400">Davis Mo</h3>
             <p className="text-gray-300 leading-relaxed">
-              A passionate developer focused on creating innovative digital
-              solutions and building the future of the web.
+              A Computer Science student passionate about AI research, robotics,
+              and full-stack development. Building innovative solutions for
+              tomorrow&apos;s challenges.
             </p>
           </motion.div>
 
@@ -95,7 +99,7 @@ const Footer = () => {
           className="border-t border-gray-800 mt-12 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Your Name. All rights reserved. Built
+            © {new Date().getFullYear()} Davis Mo. All rights reserved. Built
             with ❤️ using Next.js, TypeScript, and Tailwind CSS.
           </p>
         </motion.div>

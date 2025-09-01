@@ -12,83 +12,84 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "QR Attendance App",
       description:
-        "A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
+        "A secure attendance system built with Next.js and Supabase using JWT-based QR codes and geolocation fencing. Features server-side rendering for improved performance and secure authentication.",
       image: "/api/placeholder/400/250",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      technologies: [
+        "Next.js",
+        "Supabase",
+        "JWT",
+        "Geolocation",
+        "SSR",
+        "Resend",
+      ],
       category: "fullstack",
       github: "https://github.com",
-      live: "https://demo.com",
+      live: "https://attendance-ra.vercel.app",
       featured: true,
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Data Analytics E-book (Co-Author)",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "Developed 14 automated data analytics modules analyzing financial disclosures, web scraping, sentiment analysis, and CEO linguistic style. Created interactive student-facing website with Wolfram Cloud and React.",
       image: "/api/placeholder/400/250",
-      technologies: ["React", "Firebase", "TypeScript", "Framer Motion"],
-      category: "frontend",
+      technologies: [
+        "Mathematica",
+        "Wolfram Cloud",
+        "React",
+        "Data Analysis",
+        "Financial Analytics",
+      ],
+      category: "ai",
       github: "https://github.com",
-      live: "https://demo.com",
+      live: "https://www.CreativeDataAnalytics.org",
       featured: true,
     },
     {
       id: 3,
-      title: "AI Chat Application",
+      title: "Faculty Expertise Dashboard",
       description:
-        "An intelligent chat application powered by OpenAI API, featuring real-time conversations, context awareness, and multi-language support.",
+        "Full-stack dashboard with semantic search enabling users to explore faculty expertise and discover research areas. Features automated pipeline for 7,000+ papers and LLM analysis achieving 85% accuracy.",
       image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "OpenAI API", "TypeScript", "Tailwind CSS"],
+      technologies: [
+        "React",
+        "Semantic Search",
+        "LLM Analysis",
+        "Data Pipeline",
+        "Dashboard",
+      ],
       category: "ai",
       github: "https://github.com",
-      live: "https://demo.com",
-      featured: false,
+      live: "https://gies-dashboard.vercel.app/",
+      featured: true,
     },
     {
       id: 4,
-      title: "Portfolio Website",
+      title: "VEX Robotics Competition",
       description:
-        "A modern, responsive portfolio website built with Next.js and Framer Motion, featuring smooth animations and clean design.",
+        "Led 3-member robotics team qualifying for VEX Worlds. Optimized robot subsystems with Fusion 360 and developed path following algorithms with motion profiling achieving 180% speedup.",
       image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      category: "frontend",
-      github: "https://github.com",
-      live: "https://demo.com",
-      featured: false,
-    },
-    {
-      id: 5,
-      title: "Weather Dashboard",
-      description:
-        "A weather dashboard application that displays current weather conditions, forecasts, and interactive maps using multiple weather APIs.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Chart.js", "CSS3"],
-      category: "frontend",
-      github: "https://github.com",
-      live: "https://demo.com",
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "Blog CMS",
-      description:
-        "A content management system for blogs with markdown support, SEO optimization, and admin dashboard.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "Prisma", "PostgreSQL", "NextAuth"],
-      category: "fullstack",
-      github: "https://github.com",
-      live: "https://demo.com",
+      technologies: [
+        "Fusion 360",
+        "VEX Robotics",
+        "Motion Profiling",
+        "Path Planning",
+        "C++",
+      ],
+      category: "robotics",
+      github: null,
+      live: null,
       featured: false,
     },
   ];
 
   const filters = [
     { id: "all", label: "All Projects" },
-    { id: "frontend", label: "Frontend" },
     { id: "fullstack", label: "Full Stack" },
     { id: "ai", label: "AI/ML" },
+    { id: "robotics", label: "Robotics" },
   ];
 
   const filteredProjects =
@@ -110,9 +111,9 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Here are some of the projects I&apos;ve worked on. Each one
-            represents a unique challenge and learning opportunity in my
-            development journey.
+            Here are some of the projects I&apos;ve worked on, from AI research
+            tools to robotics competitions. Each project represents unique
+            challenges in AI, full-stack development, and robotics engineering.
           </p>
         </motion.div>
 
@@ -188,13 +189,19 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      href={project.github}
+                      href={project.github || undefined}
                       className="flex-1"
+                      disabled={!project.github}
                     >
                       <Github size={16} className="mr-2" />
                       Code
                     </Button>
-                    <Button size="sm" href={project.live} className="flex-1">
+                    <Button
+                      size="sm"
+                      href={project.live || undefined}
+                      className="flex-1"
+                      disabled={!project.live}
+                    >
                       <ExternalLink size={16} className="mr-2" />
                       Live
                     </Button>
@@ -221,7 +228,7 @@ const Projects = () => {
               I&apos;m always interested in new opportunities and exciting
               projects. Let&apos;s discuss how we can work together!
             </p>
-            <Button size="lg" href="mailto:your.email@example.com">
+            <Button size="lg" href="mailto:dal534413@utdallas.edu">
               Get In Touch
             </Button>
           </div>

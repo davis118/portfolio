@@ -7,37 +7,37 @@ const About = () => {
   const experiences = [
     {
       icon: Briefcase,
-      title: "Senior Developer",
-      company: "Tech Company",
-      period: "2022 - Present",
+      title: "AI Team Intern",
+      company: "Qihoo 360",
+      period: "Jun. 2025 - Jul. 2025",
       description:
-        "Led development of multiple web applications using React, Node.js, and AWS.",
+        "Developed internal visualization tools with React and Vue.js, created customer-facing LLM performance comparisons, and designed security monitoring dashboards using GSAP.",
     },
     {
       icon: Briefcase,
-      title: "Full Stack Developer",
-      company: "Startup Inc",
-      period: "2020 - 2022",
+      title: "Research Assistant, Faculty Expertise Dashboard",
+      company: "University of Illinois, Urbana-Champaign",
+      period: "Nov. 2024 - Current",
       description:
-        "Built scalable web applications and managed cloud infrastructure.",
+        "Created automated pipeline for 7,000+ papers, built full-stack dashboard with semantic search, and achieved 85% accuracy in sustainability relevance analysis.",
     },
     {
-      icon: GraduationCap,
-      title: "Computer Science",
-      company: "University Name",
-      period: "2016 - 2020",
+      icon: Briefcase,
+      title: "Robotics Team Lead",
+      company: "Concordia International School",
+      period: "Jun. 2023 - Jul. 2025",
       description:
-        "Bachelor's degree with focus on software engineering and algorithms.",
+        "Led 3-member robotics team, optimized subsystems with Fusion 360, developed path following algorithms achieving 180% speedup, qualified for VEX Worlds.",
     },
   ];
 
   const skills = [
     "React & Next.js",
-    "Node.js & Express",
-    "TypeScript",
-    "Python",
-    "AWS",
-    "Docker",
+    "Python & C++",
+    "AI & Machine Learning",
+    "Robotics & Automation",
+    "Data Analysis",
+    "Full-Stack Development",
   ];
 
   return (
@@ -52,9 +52,10 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I&apos;m a passionate developer with a love for creating innovative
-            solutions and learning new technologies. Let me tell you more about
-            my journey.
+            I&apos;m a Computer Science student at UT Dallas with a passion for
+            AI research, robotics, and full-stack development. My experience
+            spans from AI visualization tools to robotics competitions and
+            academic research projects.
           </p>
         </motion.div>
 
@@ -75,17 +76,17 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Calendar className="text-blue-600" size={20} />
-                  <span className="text-gray-700">Born: January 1, 1998</span>
+                  <span className="text-gray-700">Born: 2003</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="text-blue-600" size={20} />
                   <span className="text-gray-700">
-                    Location: San Francisco, CA
+                    Location: Richardson, TX
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Briefcase className="text-blue-600" size={20} />
-                  <span className="text-gray-700">Experience: 4+ years</span>
+                  <span className="text-gray-700">Experience: 2+ years</span>
                 </div>
               </div>
             </div>
@@ -149,28 +150,6 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* Bottom Section - Personal Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white rounded-xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              My Philosophy
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              &ldquo;I believe in writing clean, maintainable code that not only
-              solves the immediate problem but also considers future scalability
-              and maintainability. Every project is an opportunity to learn and
-              grow, and I approach each challenge with curiosity and
-              determination.&rdquo;
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

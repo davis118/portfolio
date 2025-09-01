@@ -3,9 +3,9 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Your Name - Developer Portfolio",
+  title: "Davis Mo - Computer Science Student & Developer",
   description:
-    "Full Stack Developer Portfolio showcasing projects, skills, and experience",
+    "Computer Science student at UT Dallas with expertise in AI research, robotics, and full-stack development. Portfolio showcasing innovative projects and technical skills.",
 };
 
 export default function RootLayout({

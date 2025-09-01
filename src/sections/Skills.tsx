@@ -14,64 +14,64 @@ const Skills = () => {
   const skillCategories = [
     {
       icon: Code,
-      title: "Frontend Development",
+      title: "Programming Languages",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "TypeScript", level: 80 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "HTML/CSS", level: 95 },
+        { name: "JavaScript", level: 90 },
+        { name: "Python", level: 85 },
+        { name: "C++", level: 80 },
+        { name: "HTML/CSS", level: 90 },
       ],
     },
     {
       icon: Database,
-      title: "Backend Development",
+      title: "Frameworks & Libraries",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "PostgreSQL", level: 70 },
-        { name: "MongoDB", level: 75 },
+        { name: "React", level: 90 },
+        { name: "Next.js", level: 85 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "Vite", level: 80 },
       ],
     },
     {
       icon: Cloud,
-      title: "DevOps & Cloud",
+      title: "Developer Tools",
       skills: [
-        { name: "AWS", level: 70 },
-        { name: "Docker", level: 75 },
         { name: "Git", level: 90 },
-        { name: "CI/CD", level: 65 },
-        { name: "Linux", level: 80 },
+        { name: "GitHub Actions", level: 80 },
+        { name: "VS Code", level: 95 },
+        { name: "Visual Studio", level: 85 },
+        { name: "Jupyter", level: 80 },
       ],
     },
     {
       icon: Palette,
-      title: "Design & Tools",
+      title: "AI & Data Libraries",
       skills: [
-        { name: "Figma", level: 70 },
-        { name: "Adobe XD", level: 65 },
-        { name: "Photoshop", level: 60 },
-        { name: "Sketch", level: 55 },
+        { name: "FAISS", level: 75 },
+        { name: "OpenAI", level: 80 },
+        { name: "Pandas", level: 85 },
+        { name: "GSAP", level: 80 },
+        { name: "shadcn/ui", level: 75 },
       ],
     },
     {
       icon: Smartphone,
-      title: "Mobile Development",
+      title: "Robotics & Automation",
       skills: [
-        { name: "React Native", level: 70 },
-        { name: "Flutter", level: 60 },
-        { name: "iOS Development", level: 55 },
+        { name: "Fusion 360", level: 85 },
+        { name: "VEX Robotics", level: 90 },
+        { name: "Motion Profiling", level: 80 },
+        { name: "Path Planning", level: 85 },
       ],
     },
     {
       icon: Globe,
       title: "Other Technologies",
       skills: [
-        { name: "GraphQL", level: 75 },
-        { name: "Redux", level: 80 },
-        { name: "Jest", level: 70 },
-        { name: "Webpack", level: 65 },
+        { name: "Supabase", level: 80 },
+        { name: "Mathematica", level: 75 },
+        { name: "Wolfram Cloud", level: 80 },
+        { name: "Server-Side Rendering", level: 85 },
       ],
     },
   ];
@@ -141,45 +141,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Always Learning
-            </h3>
-            <p className="text-lg text-gray-700 mb-6">
-              Technology evolves rapidly, and I&apos;m committed to continuous
-              learning. Currently exploring:
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Rust",
-                "WebAssembly",
-                "Machine Learning",
-                "Blockchain",
-                "Edge Computing",
-              ].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="px-4 py-2 bg-white text-blue-600 rounded-full text-sm font-medium shadow-md"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

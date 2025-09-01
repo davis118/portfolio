@@ -10,6 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   href?: string;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -19,6 +20,7 @@ const Button = ({
   onClick,
   className = "",
   href,
+  disabled = false,
 }: ButtonProps) => {
   const baseClasses =
     "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -38,7 +40,9 @@ const Button = ({
     lg: "px-8 py-4 text-lg",
   };
 
-  const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = `${baseClasses} ${variants[variant]} ${
+    sizes[size]
+  } ${className} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`;
 
   const buttonContent = (
     <motion.div
@@ -50,7 +54,7 @@ const Button = ({
     </motion.div>
   );
 
-  if (href) {
+  if (href && !disabled) {
     return (
       <a href={href} className={classes}>
         {buttonContent}
@@ -59,7 +63,7 @@ const Button = ({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button onClick={onClick} className={classes} disabled={disabled}>
       {buttonContent}
     </button>
   );

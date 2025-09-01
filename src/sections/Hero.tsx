@@ -7,9 +7,20 @@ import { Github, Linkedin, Mail } from "lucide-react";
 const Hero = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/davis-mo-143565306/",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:dal534413@utdallas.edu", label: "Email" },
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
@@ -32,7 +43,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
               >
-                Hi, I&apos;m <span className="text-blue-600">Your Name</span>
+                Hi, I&apos;m <span className="text-blue-600">Davis Mo</span>
               </motion.h1>
 
               <motion.h2
@@ -41,7 +52,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-2xl lg:text-3xl font-semibold text-gray-700"
               >
-                Full Stack Developer
+                Computer Science Student & Developer
               </motion.h2>
 
               <motion.p
@@ -50,9 +61,10 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-lg text-gray-600 leading-relaxed max-w-lg"
               >
-                I create beautiful, functional, and user-centered digital
-                experiences. Passionate about clean code, modern technologies,
-                and solving complex problems.
+                I&apos;m a Computer Science student at UT Dallas with a passion
+                for AI, robotics, and full-stack development. Currently working
+                on innovative projects in AI research and building practical
+                applications.
               </motion.p>
             </div>
 
@@ -63,10 +75,14 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" href="#projects">
+              <Button size="lg" onClick={() => scrollToSection("projects")}>
                 View My Work
               </Button>
-              <Button variant="outline" size="lg" href="#about">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollToSection("about")}
+              >
                 Learn More
               </Button>
             </motion.div>
