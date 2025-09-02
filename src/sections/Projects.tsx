@@ -98,7 +98,7 @@ const Projects = () => {
       : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -107,10 +107,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-secondary-900 mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             Here are some of the projects I&apos;ve worked on, from AI research
             tools to robotics competitions. Each project represents unique
             challenges in AI, full-stack development, and robotics engineering.
@@ -131,8 +131,8 @@ const Projects = () => {
               onClick={() => setActiveFilter(filter.id)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
                 activeFilter === filter.id
-                  ? "bg-blue-600 text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  ? "bg-primary-600 text-white shadow-lg"
+                  : "bg-white text-secondary-700 hover:bg-primary-50 hover:text-primary-600"
               }`}
             >
               {filter.label}
@@ -165,10 +165,10 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-secondary-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 flex-1">
+                  <p className="text-secondary-600 text-sm mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -177,7 +177,7 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                        className="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full"
                       >
                         {tech}
                       </span>
@@ -221,10 +221,10 @@ const Projects = () => {
           className="text-center mt-16"
         >
           <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h3 className="text-2xl font-semibold text-secondary-900 mb-4">
               Have a project in mind?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               I&apos;m always interested in new opportunities and exciting
               projects. Let&apos;s discuss how we can work together!
             </p>

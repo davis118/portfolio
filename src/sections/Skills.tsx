@@ -86,10 +86,10 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-secondary-900 mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             I&apos;ve worked with a variety of technologies and frameworks.
             Here&apos;s a comprehensive overview of my technical skills and
             proficiency levels.
@@ -104,13 +104,13 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+              className="bg-secondary-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <category.icon className="text-blue-600" size={24} />
+                <div className="p-2 bg-primary-100 rounded-lg">
+                  <category.icon className="text-primary-600" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-secondary-900">
                   {category.title}
                 </h3>
               </div>
@@ -119,20 +119,20 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-secondary-700">
                         {skill.name}
                       </span>
-                      <span className="text-sm text-blue-600 font-semibold">
+                      <span className="text-sm text-primary-600 font-semibold">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-secondary-200 rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, delay: skillIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                        className="bg-primary-600 h-2 rounded-full transition-all duration-300"
                       />
                     </div>
                   </div>

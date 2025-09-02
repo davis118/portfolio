@@ -41,16 +41,16 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight"
               >
-                Hi, I&apos;m <span className="text-blue-600">Davis Mo</span>
+                Hi, I&apos;m <span className="text-primary-600">Davis Mo</span>
               </motion.h1>
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl lg:text-3xl font-semibold text-gray-700"
+                className="text-2xl lg:text-3xl font-semibold text-secondary-700"
               >
                 Computer Science Student & Developer
               </motion.h2>
@@ -59,7 +59,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-lg text-gray-600 leading-relaxed max-w-lg"
+                className="text-lg text-secondary-600 leading-relaxed max-w-lg"
               >
                 I&apos;m a Computer Science student at UT Dallas with a passion
                 for AI, robotics, and full-stack development. Currently working
@@ -102,7 +102,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-3 bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600 rounded-full transition-colors duration-200"
+                  className="p-3 bg-secondary-100 hover:bg-primary-100 text-secondary-700 hover:text-primary-600 rounded-full transition-colors duration-200"
                 >
                   <social.icon size={20} />
                 </motion.a>

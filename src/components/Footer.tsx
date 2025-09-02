@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
@@ -26,8 +26,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-blue-400">Davis Mo</h3>
-            <p className="text-gray-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-primary-400">Davis Mo</h3>
+            <p className="text-secondary-300 leading-relaxed">
               A Computer Science student passionate about AI research, robotics,
               and full-stack development. Building innovative solutions for
               tomorrow&apos;s challenges.
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-secondary-300 hover:text-primary-400 transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -66,7 +66,7 @@ const Footer = () => {
             className="space-y-4"
           >
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
-            <p className="text-gray-300">
+            <p className="text-secondary-300">
               Ready to start a project or just want to chat? I&apos;d love to
               hear from you!
             </p>
@@ -81,7 +81,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 bg-gray-800 hover:bg-blue-600 text-gray-300 hover:text-white rounded-full transition-all duration-200"
+                  className="p-2 bg-secondary-800 hover:bg-primary-600 text-secondary-300 hover:text-white rounded-full transition-all duration-200"
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -98,7 +98,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-800 mt-12 pt-8 text-center"
         >
-          <p className="text-gray-400">
+          <p className="text-secondary-400">
             © {new Date().getFullYear()} Davis Mo. All rights reserved. Built
             with ❤️ using Next.js, TypeScript, and Tailwind CSS.
           </p>

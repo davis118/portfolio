@@ -41,7 +41,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,8 +50,10 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-secondary-900 mb-4">
+            About Me
+          </h2>
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             I&apos;m a Computer Science student at UT Dallas with a passion for
             AI research, robotics, and full-stack development. My experience
             spans from AI visualization tools to robotics competitions and
@@ -69,30 +71,32 @@ const About = () => {
             className="space-y-8"
           >
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
                 Personal Information
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Calendar className="text-blue-600" size={20} />
-                  <span className="text-gray-700">Born: 2003</span>
+                  <Calendar className="text-secondary-700" size={20} />
+                  <span className="text-secondary-700">Born: 2003</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="text-blue-600" size={20} />
-                  <span className="text-gray-700">
+                  <MapPin className="text-primary-600" size={20} />
+                  <span className="text-secondary-700">
                     Location: Richardson, TX
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Briefcase className="text-blue-600" size={20} />
-                  <span className="text-gray-700">Experience: 2+ years</span>
+                  <Briefcase className="text-primary-600" size={20} />
+                  <span className="text-secondary-700">
+                    Experience: 2+ years
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
                 Quick Skills
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -103,7 +107,7 @@ const About = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                    className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium"
                   >
                     {skill}
                   </motion.span>
@@ -120,7 +124,7 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <h3 className="text-2xl font-semibold text-secondary-900 mb-6">
               Experience & Education
             </h3>
 
@@ -134,16 +138,20 @@ const About = () => {
                 className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-600"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-2 bg-blue-100 rounded-lg">
-                    <exp.icon className="text-blue-600" size={20} />
+                  <div className="p-2 bg-primary-100 rounded-lg">
+                    <exp.icon className="text-primary-600" size={20} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-900">
+                    <h4 className="text-lg font-semibold text-secondary-900">
                       {exp.title}
                     </h4>
-                    <p className="text-blue-600 font-medium">{exp.company}</p>
-                    <p className="text-gray-500 text-sm mb-2">{exp.period}</p>
-                    <p className="text-gray-700">{exp.description}</p>
+                    <p className="text-primary-600 font-medium">
+                      {exp.company}
+                    </p>
+                    <p className="text-secondary-500 text-sm mb-2">
+                      {exp.period}
+                    </p>
+                    <p className="text-secondary-700">{exp.description}</p>
                   </div>
                 </div>
               </motion.div>
