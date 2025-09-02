@@ -41,7 +41,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight"
               >
                 Hi, I&apos;m <span className="text-primary-600">Davis Mo</span>
               </motion.h1>
@@ -50,7 +50,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl lg:text-3xl font-semibold text-secondary-700"
+                className="text-xl sm:text-2xl lg:text-3xl font-semibold text-secondary-700"
               >
                 Computer Science Student & Developer
               </motion.h2>
@@ -73,7 +73,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 items-center sm:items-start"
             >
               <Button size="lg" onClick={() => scrollToSection("projects")}>
                 View My Work
@@ -115,7 +115,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-center lg:justify-end"
           >
             <div className="relative">
               <motion.div
