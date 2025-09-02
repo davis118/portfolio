@@ -54,8 +54,10 @@ const AnimatedCardBackground = ({
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full">
-        <div className="bg-white/80 rounded-xl p-6 h-full">{children}</div>
+      <div className="relative z-10 h-full w-full">
+        <div className="bg-white/80 rounded-xl p-6 h-full w-full">
+          {children}
+        </div>
       </div>
     </div>
   );

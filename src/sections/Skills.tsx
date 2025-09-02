@@ -78,8 +78,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -105,8 +105,9 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
+              className="h-full"
             >
-              <Card className="bg-secondary-50 h-full">
+              <Card className="bg-secondary-50 h-full w-full">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-primary-100 rounded-lg">
                     <category.icon className="text-primary-600" size={24} />

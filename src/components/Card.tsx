@@ -19,6 +19,7 @@ const Card = ({ children, className = "", onClick }: CardProps) => {
       whileHover={{ scale: 1.05 }}
       viewport={{ once: true }}
       onClick={onClick}
+      className="h-full w-full"
     >
       <AnimatedCardBackground className={className}>
         {children}
