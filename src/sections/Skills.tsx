@@ -17,62 +17,62 @@ const Skills = () => {
       icon: Code,
       title: "Programming Languages",
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "C++", level: 80 },
-        { name: "HTML/CSS", level: 90 },
+        { name: "JavaScript" },
+        { name: "Python" },
+        { name: "C++" },
+        { name: "HTML/CSS" },
       ],
     },
     {
       icon: Database,
       title: "Frameworks & Libraries",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "Vite", level: 80 },
+        { name: "React" },
+        { name: "Next.js" },
+        { name: "Tailwind CSS" },
+        { name: "Vite" },
       ],
     },
     {
       icon: Cloud,
       title: "Developer Tools",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "GitHub Actions", level: 80 },
-        { name: "VS Code", level: 95 },
-        { name: "Visual Studio", level: 85 },
-        { name: "Jupyter", level: 80 },
+        { name: "Git" },
+        { name: "GitHub Actions" },
+        { name: "VS Code" },
+        { name: "Visual Studio" },
+        { name: "Jupyter" },
       ],
     },
     {
       icon: Palette,
       title: "AI & Data Libraries",
       skills: [
-        { name: "FAISS", level: 75 },
-        { name: "OpenAI", level: 80 },
-        { name: "Pandas", level: 85 },
-        { name: "GSAP", level: 80 },
-        { name: "shadcn/ui", level: 75 },
+        { name: "FAISS" },
+        { name: "OpenAI" },
+        { name: "Pandas" },
+        { name: "GSAP" },
+        { name: "shadcn/ui" },
       ],
     },
     {
       icon: Smartphone,
       title: "Robotics & Automation",
       skills: [
-        { name: "Fusion 360", level: 85 },
-        { name: "VEX Robotics", level: 90 },
-        { name: "Motion Profiling", level: 80 },
-        { name: "Path Planning", level: 85 },
+        { name: "Fusion 360" },
+        { name: "VEX Robotics" },
+        { name: "Motion Profiling" },
+        { name: "Path Planning" },
       ],
     },
     {
       icon: Globe,
       title: "Other Technologies",
       skills: [
-        { name: "Supabase", level: 80 },
-        { name: "Mathematica", level: 75 },
-        { name: "Wolfram Cloud", level: 80 },
-        { name: "Server-Side Rendering", level: 85 },
+        { name: "Supabase" },
+        { name: "Mathematica" },
+        { name: "Wolfram Cloud" },
+        { name: "Server-Side Rendering" },
       ],
     },
   ];
@@ -98,41 +98,40 @@ const Skills = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category) => (
-            <Card key={category.title} className="bg-secondary-50">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2 bg-primary-100 rounded-lg">
-                  <category.icon className="text-primary-600" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-900">
-                  {category.title}
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-secondary-700">
-                        {skill.name}
-                      </span>
-                      <span className="text-sm text-primary-600 font-semibold">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-secondary-200 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-primary-600 h-2 rounded-full transition-all duration-300"
-                      />
-                    </div>
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-secondary-50 h-full">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="p-2 bg-primary-100 rounded-lg">
+                    <category.icon className="text-primary-600" size={24} />
                   </div>
-                ))}
-              </div>
-            </Card>
+                  <h3 className="text-xl font-semibold text-secondary-900">
+                    {category.title}
+                  </h3>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
+                      viewport={{ once: true }}
+                      className="px-3 py-1.5 rounded-full text-sm font-medium bg-primary-100 text-primary-800 border border-primary-200 transition-all duration-200 hover:scale-105 hover:shadow-sm"
+                    >
+                      {skill.name}
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
