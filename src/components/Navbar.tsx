@@ -20,10 +20,10 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     setIsOpen(false);
     if (element) {
-      // Small delay to allow menu to close before scrolling
-      setTimeout(() => {
+      // Use requestAnimationFrame for better timing with DOM updates
+      requestAnimationFrame(() => {
         element.scrollIntoView({ behavior: "smooth" });
-      }, 0);
+      });
     }
   };
 
