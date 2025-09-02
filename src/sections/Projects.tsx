@@ -15,7 +15,7 @@ const Projects = () => {
       title: "QR Attendance App",
       description:
         "A secure attendance system built with Next.js and Supabase using JWT-based QR codes and geolocation fencing. Features server-side rendering for improved performance and secure authentication.",
-      image: "/api/placeholder/400/250",
+      image: "/attendance-app.png",
       technologies: [
         "Next.js",
         "Supabase",
@@ -25,16 +25,15 @@ const Projects = () => {
         "Resend",
       ],
       category: "fullstack",
-      github: "https://github.com",
+      github: "https://github.com/davis118/attendance-ra",
       live: "https://attendance-ra.vercel.app",
-      featured: true,
     },
     {
       id: 2,
       title: "Data Analytics E-book (Co-Author)",
       description:
         "Developed 14 automated data analytics modules analyzing financial disclosures, web scraping, sentiment analysis, and CEO linguistic style. Created interactive student-facing website with Wolfram Cloud and React.",
-      image: "/api/placeholder/400/250",
+      image: "/cda-book-website.png",
       technologies: [
         "Mathematica",
         "Wolfram Cloud",
@@ -43,16 +42,15 @@ const Projects = () => {
         "Financial Analytics",
       ],
       category: "ai",
-      github: "https://github.com",
-      live: "https://www.CreativeDataAnalytics.org",
-      featured: true,
+      github: "https://github.com/davis118/CDAbook-website",
+      live: "https://www.creativedataanalytics.org",
     },
     {
       id: 3,
       title: "Faculty Expertise Dashboard",
       description:
         "Full-stack dashboard with semantic search enabling users to explore faculty expertise and discover research areas. Features automated pipeline for 7,000+ papers and LLM analysis achieving 85% accuracy.",
-      image: "/api/placeholder/400/250",
+      image: "/gies-dashboard.png",
       technologies: [
         "React",
         "Semantic Search",
@@ -61,7 +59,7 @@ const Projects = () => {
         "Dashboard",
       ],
       category: "ai",
-      github: "https://github.com",
+      github: "https://github.com/feidu7/Gies-dashboard",
       live: "https://gies-dashboard.vercel.app/",
       featured: true,
     },
@@ -70,7 +68,7 @@ const Projects = () => {
       title: "VEX Robotics Competition",
       description:
         "Led 3-member robotics team qualifying for VEX Worlds. Optimized robot subsystems with Fusion 360 and developed path following algorithms with motion profiling achieving 180% speedup.",
-      image: "/api/placeholder/400/250",
+      image: "/vex-robotics.png",
       technologies: [
         "Fusion 360",
         "VEX Robotics",
@@ -81,7 +79,6 @@ const Projects = () => {
       category: "robotics",
       github: null,
       live: null,
-      featured: false,
     },
   ];
 
@@ -146,14 +143,11 @@ const Projects = () => {
             <Card key={project.id} className="h-full flex flex-col">
               {/* Project Image */}
               <div className="relative mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">📱</span>
-                </div>
-                {project.featured && (
-                  <div className="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold">
-                    Featured
-                  </div>
-                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-contain bg-gray-100"
+                />
               </div>
 
               {/* Project Content */}

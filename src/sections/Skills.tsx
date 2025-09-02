@@ -17,7 +17,7 @@ const Skills = () => {
       icon: Code,
       title: "Programming Languages",
       skills: [
-        { name: "JavaScript" },
+        { name: "TypeScript" },
         { name: "Python" },
         { name: "C++" },
         { name: "HTML/CSS" },
@@ -46,7 +46,7 @@ const Skills = () => {
     },
     {
       icon: Palette,
-      title: "AI & Data Libraries",
+      title: "Libraries",
       skills: [
         { name: "FAISS" },
         { name: "OpenAI" },
