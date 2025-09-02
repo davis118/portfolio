@@ -18,17 +18,20 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
     setIsOpen(false);
+    if (element) {
+      // Small delay to allow menu to close before scrolling
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
   };
 
   const navItems = [
     { name: "Home", id: "home" },
-    { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
+    { name: "Experience", id: "experience" },
   ];
 
   return (
@@ -51,8 +54,10 @@ const Navbar = () => {
                 key={item.id}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.85 }}
-                onClick={() => scrollToSection(item.id)}
-                className="text-secondary-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                onClick={() => {
+                  scrollToSection(item.id);
+                }}
+                className="text-secondary-700 hover:text-primary-600 transition-colors duration-200 font-medium cursor-pointer"
               >
                 {item.name}
               </motion.button>
@@ -64,7 +69,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.85 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="text-secondary-700 hover:text-primary-600 transition-colors duration-200"
+              className="text-secondary-700 hover:text-primary-600 transition-colors duration-200 cursor-pointer"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -83,14 +88,19 @@ const Navbar = () => {
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => (
-                  <motion.button
+                  <motion.a
                     key={item.id}
+                    href={`#${item.id}`}
                     whileTap={{ scale: 0.85 }}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-3 py-2 text-secondary-700 hover:text-primary-600 hover:bg-secondary-50 rounded-md transition-colors duration-200 font-medium"
+                    onClick={(e) => {
+                      console.log("Mobile nav clicked:", item.name, item.id);
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
+                    className="block w-full text-left px-3 py-2 text-secondary-700 hover:text-primary-600 hover:bg-secondary-50 rounded-md transition-colors duration-200 font-medium cursor-pointer"
                   >
                     {item.name}
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>

@@ -65,7 +65,12 @@ const Button = ({
         whileTap={{ scale: 0.85 }}
         className="inline-block h-full"
       >
-        <a href={href} className={classes}>
+        <a
+          href={href}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {children}
         </a>
       </motion.div>

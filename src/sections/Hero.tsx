@@ -81,7 +81,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => scrollToSection("about")}
+                onClick={() => scrollToSection("skills")}
               >
                 Learn More
               </Button>
