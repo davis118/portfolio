@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Card from "../components/Card";
 import {
   Code,
   Database,
@@ -77,7 +78,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,15 +98,8 @@ const Skills = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-secondary-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
-            >
+          {skillCategories.map((category) => (
+            <Card key={category.title} className="bg-secondary-50">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-2 bg-primary-100 rounded-lg">
                   <category.icon className="text-primary-600" size={24} />
@@ -138,7 +132,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </Card>
           ))}
         </div>
       </div>

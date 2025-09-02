@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-white pt-16"
+      className="min-h-screen flex items-center justify-center pt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -101,7 +101,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.85 }}
                   className="p-3 bg-secondary-100 hover:bg-primary-100 text-secondary-700 hover:text-primary-600 rounded-full transition-colors duration-200"
                 >
                   <social.icon size={20} />

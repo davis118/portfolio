@@ -42,20 +42,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-primary-600"
-          >
-            Davis Mo
-          </motion.div>
+          <h1 className="text-2xl font-bold text-primary-600">Davis Mo</h1>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.85 }}
                 onClick={() => scrollToSection(item.id)}
                 className="text-secondary-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
@@ -67,7 +62,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <motion.button
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.85 }}
               onClick={() => setIsOpen(!isOpen)}
               className="text-secondary-700 hover:text-primary-600 transition-colors duration-200"
             >
@@ -88,7 +83,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <motion.button
                   key={item.id}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.85 }}
                   onClick={() => scrollToSection(item.id)}
                   className="block w-full text-left px-3 py-2 text-secondary-700 hover:text-primary-600 hover:bg-secondary-50 rounded-md transition-colors duration-200 font-medium"
                 >

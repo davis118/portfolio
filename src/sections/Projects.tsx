@@ -98,7 +98,7 @@ const Projects = () => {
       : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 bg-secondary-50">
+    <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -126,89 +126,81 @@ const Projects = () => {
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {filters.map((filter) => (
-            <button
+            <Button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                activeFilter === filter.id
-                  ? "bg-primary-600 text-white shadow-lg"
-                  : "bg-white text-secondary-700 hover:bg-primary-50 hover:text-primary-600"
-              }`}
+              variant={activeFilter === filter.id ? "primary" : "outline"}
+              size="sm"
+              className={
+                activeFilter === filter.id ? "" : "bg-white hover:bg-primary-50"
+              }
             >
               {filter.label}
-            </button>
+            </Button>
           ))}
         </motion.div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full flex flex-col">
-                {/* Project Image */}
-                <div className="relative mb-4 overflow-hidden rounded-lg">
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">📱</span>
+          {filteredProjects.map((project) => (
+            <Card key={project.id} className="h-full flex flex-col">
+              {/* Project Image */}
+              <div className="relative mb-4 overflow-hidden rounded-lg">
+                <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold">📱</span>
+                </div>
+                {project.featured && (
+                  <div className="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold">
+                    Featured
                   </div>
-                  {project.featured && (
-                    <div className="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold">
-                      Featured
-                    </div>
-                  )}
+                )}
+              </div>
+
+              {/* Project Content */}
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-secondary-600 text-sm mb-4 flex-1">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                {/* Project Content */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-secondary-600 text-sm mb-4 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Project Links */}
-                  <div className="flex gap-2 mt-auto">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      href={project.github || undefined}
-                      className="flex-1"
-                      disabled={!project.github}
-                    >
-                      <Github size={16} className="mr-2" />
-                      Code
-                    </Button>
-                    <Button
-                      size="sm"
-                      href={project.live || undefined}
-                      className="flex-1"
-                      disabled={!project.live}
-                    >
-                      <ExternalLink size={16} className="mr-2" />
-                      Live
-                    </Button>
-                  </div>
+                {/* Project Links */}
+                <div className="flex gap-2 mt-auto">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    href={project.github || undefined}
+                    className="flex-1"
+                    disabled={!project.github}
+                  >
+                    <Github size={16} className="mr-2" />
+                    Code
+                  </Button>
+                  <Button
+                    size="sm"
+                    href={project.live || undefined}
+                    className="flex-1"
+                    disabled={!project.live}
+                  >
+                    <ExternalLink size={16} className="mr-2" />
+                    Live
+                  </Button>
                 </div>
-              </Card>
-            </motion.div>
+              </div>
+            </Card>
           ))}
         </div>
 
@@ -220,7 +212,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
+          <Card className="w-full mx-auto">
             <h3 className="text-2xl font-semibold text-secondary-900 mb-4">
               Have a project in mind?
             </h3>
@@ -231,7 +223,7 @@ const Projects = () => {
             <Button size="lg" href="mailto:dal534413@utdallas.edu">
               Get In Touch
             </Button>
-          </div>
+          </Card>
         </motion.div>
       </div>
     </section>

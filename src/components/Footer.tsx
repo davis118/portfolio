@@ -80,7 +80,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.85 }}
                   className="p-2 bg-secondary-800 hover:bg-primary-600 text-secondary-300 hover:text-white rounded-full transition-all duration-200"
                 >
                   <social.icon size={20} />
